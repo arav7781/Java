@@ -5,21 +5,7 @@ class ArrayFunctions {
         System.out.println("Array is: " + array);
     }
 
-    void evenOdd(int[] array) {
-        ArrayList<Integer> even = new ArrayList<>();
-        ArrayList<Integer> odd = new ArrayList<>();
-
-        for (int num : array) {
-            if (num % 2 == 0) {
-                even.add(num);
-            } else {
-                odd.add(num);
-            }
-        }
-
-        System.out.println("Even numbers: " + even);
-        System.out.println("Odd numbers: " + odd);
-    }
+   
 
     int mindiff(int[] array) {
         if (array.length < 2) {
