@@ -1,0 +1,3 @@
+## ArrayFuntions.java contains various array related operations like checking even or odd, mindiff in the array between two nos and arrayto arraylist and viceversa
+## userinput file is for taking input array from the user 
+## main file is to comibing the functioning of both the files and running it as a single module
