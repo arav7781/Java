@@ -1,12 +1,16 @@
-//Main1.java
-class Main1{
-	public static void main(String args[]){
-		UserInput1 ui = new UserInput1();
-		AArrayFunctions functions = new AArrayFunctions();
-		int[] array = ui.arrayInput();
-		functions.evenOdd(array);
-		functions.diff(array);
-	}
+import java.util.*;
 
+class UserInput {
+    int[] arrayInput() {
+        int[] array = new int[5];
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Enter 5 numbers:");
+
+        for (int i = 0; i < 5; i++) {
+            array[i] = scan.nextInt();
+        }
+
+        return array;
+    }
 }
