@@ -94,7 +94,7 @@ After completing these experiments, students will be able to:
 **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/java-lab-experiments.git
-cd java-lab-experiments
+git clone https://github.com/arav7781/Java.git
+cd Java
 
 
