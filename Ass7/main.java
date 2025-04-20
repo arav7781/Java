@@ -49,3 +49,41 @@ private static void displayMenu() {
  }
  private static void processChoice(int choice, Scanner scanner) {
  double a, b, result = 0;
+  itch (choice) {
+ case 1:
+ System.out.print("Enter first number: ");
+ a = scanner.nextDouble();
+ System.out.print("Enter second number: ");
+ b = scanner.nextDouble();
+ result = Calculator.add(a, b);
+ break;
+ case 2:
+ System.out.print("Enter first number: ");
+ a = scanner.nextDouble();
+ System.out.print("Enter second number: ");
+ b = scanner.nextDouble();
+ result = Calculator.subtract(a, b);
+ break;
+ case 3:
+ System.out.print("Enter first number: ");
+ a = scanner.nextDouble();
+ System.out.print("Enter second number: ");
+ b = scanner.nextDouble();
+ result = Calculator.multiply(a, b);
+ break;
+ case 4:
+ System.out.print("Enter dividend: ");
+ a = scanner.nextDouble();
+ System.out.print("Enter divisor: ");
+ b = scanner.nextDouble();
+ result = Calculator.divide(a, b);
+ break;
+ case 5:
+ System.out.print("Enter a number: ");
+ a = scanner.nextDouble();
+ result = Calculator.square(a);
+ break;
+ case 6:
+ System.out.print("Enter a number: ");
+ a = scanner.nextDouble();
+ result = Calculator.cube(a);
