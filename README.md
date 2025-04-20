@@ -35,7 +35,7 @@ This repository includes all the experiments implemented during the lab, demonst
 
 ---
 
-## 🗂️ Folder Structure (📈 Mermaid Diagram)
+## 🗂️ Folder Structure (📈)
 
 ```mermaid
 graph TD
