@@ -71,3 +71,37 @@ case 3:
 sc.nextLine(); if (pos < 0 || pos >= students.size()) throw new
 InvalidInputException("Position out of bounds."); System.out.println(students.get(pos));
 break;
+default:
+ throw new InvalidChoiceException("Invalid search choice!");
+ }
+}
+ public static void updateStudent(ArrayList<Student> students) throws CustomException {
+ System.out.print("Enter PRN to update:
+"); String prn = sc.nextLine();
+for (Student s : students) { if
+(s.getPrn().equals(prn)) {
+ System.out.print("Enter new Name: ");
+ s.setName(sc.nextLine());
+ System.out.print("Enter new DOB (YYYY-MM-DD): ");
+ s.setDob(LocalDate.parse(sc.nextLine()));
+System.out.print("Enter new Marks: ");
+ s.setMarks(sc.nextDouble());
+sc.nextLine();
+ System.out.println("Student updated successfully!");
+return;
+ } } throw new
+StudentNotFoundException("Student not found to update.");
+ }
+ public static void deleteStudent(ArrayList<Student> students) throws CustomException {
+ System.out.print("Enter PRN to delete: ");
+ String prn = sc.nextLine();
+ Iterator<Student> it =
+students.iterator(); while (it.hasNext())
+{ if (it.next().getPrn().equals(prn))
+{ it.remove();
+ System.out.println("Student deleted successfully!");
+return;
+ } } throw new
+StudentNotFoundException("Student not found to delete."); }
+}
+/
