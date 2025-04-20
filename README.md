@@ -1,4 +1,4 @@
-# 🧪 Programming with Java Lab – AIML Specialization
+# 🧪 Programming with Java Lab – AIML 
 
 Welcome to the official repository for the **Programming with Java Lab** course, part of the AIML specialization under Symbiosis International University.
 
