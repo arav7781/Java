@@ -104,4 +104,29 @@ return;
  } } throw new
 StudentNotFoundException("Student not found to delete."); }
 }
-/
+// CustomException.java public class
+CustomException extends Exception { public
+CustomException(String message) {
+super(message);
+ }
+}
+// StudentNotFoundException.java public class
+StudentNotFoundException extends CustomException { public
+StudentNotFoundException(String msg) { super(msg);
+ }
+}
+// InvalidChoiceException.java public class
+InvalidChoiceException extends CustomException { public
+InvalidChoiceException(String msg) { super(msg);
+ }
+}
+// DuplicateStudentException.java public class
+DuplicateStudentException extends CustomException { public
+DuplicateStudentException(String msg) { super(msg);
+ }
+}
+// InvalidInputException.java public class
+InvalidInputException extends CustomException { public
+InvalidInputException(String msg) { super(msg);
+ }
+}
