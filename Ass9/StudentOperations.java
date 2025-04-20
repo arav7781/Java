@@ -110,6 +110,101 @@ public static void deleteStudent() {
 
             stmt.setInt(1, prn);
             ResultSet rs = stmt.executeQuery();
+                        if (rs.next()) {
+                System.out.println("\nStudent Found:");
+                System.out.println("PRN: " + rs.getInt(1));
+                System.out.println("Name: " + rs.getString(2));
+                System.out.println("Branch: " + rs.getString(3));
+                System.out.println("Batch: " + rs.getString(4));
+                System.out.println("CGPA: " + rs.getFloat(5) + "\n");
+            } else {
+                System.out.println("\nNo student found with PRN: " + prn);
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void searchByName() {
+        try {
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM student WHERE name LIKE ?");
+
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter name to search: ");
+            String name = scan.nextLine();
+
+            stmt.setString(1, "%" + name + "%"); // Allows partial matches
+            ResultSet rs = stmt.executeQuery();
+
+            boolean found = false;
+            System.out.println("\nSearch Results:");
+            while (rs.next()) {
+                found = true;
+                System.out.println("PRN: " + rs.getInt(1));
+                System.out.println("Name: " + rs.getString(2));
+                System.out.println("Branch: " + rs.getString(3));
+                System.out.println("Batch: " + rs.getString(4));
+                System.out.println("CGPA: " + rs.getFloat(5) + "\n");
+            }
+
+            if (!found) {
+                System.out.println("\nNo students found with name containing: " + name);
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void updateStudent() {
+        try {
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement stmt = conn.prepareStatement(
+                    "UPDATE student SET name=?, branch=?, batch=?, cgpa=? WHERE PRN=?"
+            );
+
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println("Enter PRN of student to update: ");
+            int prn = scan.nextInt();
+            scan.nextLine(); // Consume newline
+
+            System.out.println("Enter new name: ");
+            String name = scan.nextLine();
+
+            System.out.println("Enter new branch: ");
+            String branch = scan.nextLine();
+
+            System.out.println("Enter new batch: ");
+            String batch = scan.nextLine();
+
+            System.out.println("Enter new CGPA: ");
+            float cgpa = scan.nextFloat();
+
+            stmt.setString(1, name);
+            stmt.setString(2, branch);
+            stmt.setString(3, batch);
+            stmt.setFloat(4, cgpa);
+            stmt.setInt(5, prn);
+
+            int rowsUpdated = stmt.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Student updated successfully!");
+            } else {
+                System.out.println("No student found with given PRN!");
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 
 
 
