@@ -35,3 +35,17 @@ System.out.println("Exiting calculator. Goodbye!");
  }
  scanner.close();
  }
+private static void displayMenu() {
+ System.out.println("\nCalculator Menu:");
+ System.out.println("1. Addition");
+ System.out.println("2. Subtraction");
+ System.out.println("3. Multiplication");
+ System.out.println("4. Division");
+ System.out.println("5. Square");
+ System.out.println("6. Cube");
+ System.out.println("7. Square Root");
+ System.out.println("8. Exit");
+ System.out.print("Choose an option (1-8): ");
+ }
+ private static void processChoice(int choice, Scanner scanner) {
+ double a, b, result = 0;
