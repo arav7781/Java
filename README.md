@@ -80,7 +80,7 @@ graph TD
 
 ## 🧑‍🏫 Course Outcomes
 
-After completing these experiments, students will be able to:
+After completing these experiments, I was able to:
 
 - Design and implement OOP concepts effectively in Java.  
 - Work with Java collections, packages, interfaces, and abstract classes.  
