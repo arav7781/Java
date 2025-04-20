@@ -87,3 +87,13 @@ private static void displayMenu() {
  System.out.print("Enter a number: ");
  a = scanner.nextDouble();
  result = Calculator.cube(a);
+   break;
+ case 7:
+ System.out.print("Enter a number: ");
+ a = scanner.nextDouble();
+ result = Calculator.squareRoot(a);
+ break;
+ }
+ System.out.println("Result: " + result);
+ }
+
