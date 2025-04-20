@@ -38,3 +38,13 @@ public class JavaThreadsDemo {
     }
     // Start thread using class that implements Runnable     public static void startThreadTwo() {         Thread t2 = new Thread(new MyThread2());         t2.start();
     }
+void run() {
+                System.out.println("Anonymous thread printing numbers 6 to 10:");                 for (int i = 6; i <= 10; i++) {
+                    System.out.println("Anonymous Thread: " + i);                     try {
+                        Thread.sleep(400);
+                    } catch (InterruptedException e) {
+                        System.out.println("Anonymous thread interrupted");
+                    }
+                }
+            }
+
