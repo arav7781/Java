@@ -47,4 +47,23 @@ void run() {
                     }
                 }
             }
+};         t3.start();
+    }
+    // Start lambda thread (Java 8+)     public static void startRunnableLambda() {
+        Thread t4 = new Thread(() -> {
+            System.out.println("Lambda thread printing squares of 1 to 5:");             for (int i = 1; i <= 5; i++) {
+                System.out.println("Lambda Thread: " + (i * i));                 try {
+                    Thread.sleep(400);
+                } catch (InterruptedException e) {
+                    System.out.println("Lambda thread interrupted");
+                }
+            }         });         t4.start();
+    }
+    public static void main(String[] args) {
+        // Main entry point
+        System.out.println("=== Java Threads Demonstration ===");
+        // Start all thread operations         startThreadOne();         startThreadTwo();         startAnonymousThread();         startRunnableLambda();
+    }
+}
+
 
