@@ -43,4 +43,39 @@ public class StudentOperations {
             stmt.setFloat(5, cgpa);
 
             int rowInserted = stmt.executeUpdate();
+                        if(rowInserted>0){
+                System.out.println("Row inserted successfully");
+            }
+
+            conn.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void displayStudent(){
+        try{
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD); //return a connection object that will be assigned to "conn"
+            Statement smt = conn.createStatement();
+            ResultSet rs = smt.executeQuery("select * from student");
+
+            System.out.println("\nStudent Records: \n");
+
+            while(rs.next()){
+                System.out.println("PRN: "+rs.getInt(1));
+                System.out.println("Name: "+rs.getString(2));
+                System.out.println("Branch: "+rs.getString(3));
+                System.out.println("Batch: "+rs.getString(4));
+                System.out.println("CGPA: "+rs.getFloat(5) + "\n");
+            }
+
+            conn.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+
 
